@@ -1,0 +1,36 @@
+html{
+	overflow-y:scroll;
+}
+
+body {
+    font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
+}
+
+p{
+	text-align: left !important;
+}
+
+.table{
+	width:100%;
+
+	display: block;
+
+	overflow-x: auto;
+
+}
+.table tr:nth-child(2n){
+	background-color: #eee;
+}
+.table tr:first-child td{
+	font-weight: bold;
+}
+
+
+.btn{
+	margin-bottom: 20px !important;
+}
+
+
+.comp{
+	width:9%;
+}
