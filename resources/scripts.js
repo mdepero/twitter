@@ -20,7 +20,7 @@ if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
 var returnedData;
 
 function fetchData( callback, v1, v2 ){
-  var url = serverRootURL+"serverfile.php?q=" + callback.getName() + "&v1=" +v1+ "&v2=" +v2+ "&t=" + Math.random();
+  var url = serverRootURL+"?q=" + callback.getName() + "&v1=" +v1+ "&v2=" +v2+ "&t=" + Math.random();
   url = url.replace(" ","%20");
   console.log("SENT URL: "+url);
   xmlhttp.onreadystatechange = function() {
