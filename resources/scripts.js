@@ -42,14 +42,6 @@ function fetchData( callback, v1, v2 ){
 }
 
 
-
-document.onload = function(){
-
-  // hard code group id for now
-  fetchData(getdata,1,"");
-
-}
-
 function getdata(){
 
   alert(returnedData);
