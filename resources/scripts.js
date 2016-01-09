@@ -48,3 +48,28 @@ function getdata(){
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  This is used to get the name of a callback function (or any function) as a string. 
+    Credit to: http://stackoverflow.com/questions/10624057/get-name-as-string-from-a-javascript-function-reference
+*/
+Function.prototype.getName = function(){
+  // Find zero or more non-paren chars after the function start
+  return /function ([^(]*)/.exec( this+"" )[1];
+};
+
+
