@@ -44,7 +44,13 @@ function fetchData( callback, v1, v2 ){
 
 function getdata(){
 
-  alert(returnedData);
+  $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current Counts</th><th>Overall Change</th><th>1 Month</th><th>1 Week</th><th>Today</th></tr>');
+
+  $.each(returnedData, function( index, value){
+
+    $("#dataTable").append('<tr class="net"><td rowspan="4">'+value['name']+'</td><td rowspan="4">'+value['handle']+'</td><td>Net Activity</td><td>'+(value['counts']['followers'][0]+value['counts']['following'][0]+value['counts']['tweets'][0])+'</td><td>Overall</td><td>month</td><td>week</td><td>day</td></tr>');
+
+  });
 
 }
 
