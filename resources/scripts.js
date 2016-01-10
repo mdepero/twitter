@@ -56,7 +56,7 @@ function fixString(string){
 
 function getdata(){
 
-  $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current Counts</th><th>Overall Change</th><th>1 Month</th><th>1 Week</th><th>Today</th></tr>');
+  $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current</th><th>Overall</th><th>1 Month</th><th>1 Week</th><th>Today</th></tr>');
 
   $.each(returnedData, function( index, value){
 
@@ -74,6 +74,36 @@ function getdata(){
 
 
 
+
+
+function addUser(){
+
+  var v = {};
+  $.each($('#adduser').serializeArray(), function(i, field) {
+      v[field.name] = field.value;
+  });
+
+  var url = serverRootURL+"?q=adduser&firstname="+v['firstname']+'&lastname='+v['lastname']+'&twitterhandle='+v['twitterhandle']+'&groupid=1';
+  url = url.replace(" ","%20");
+  console.log("SENT URL: "+url);
+  xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            returnedData = xmlhttp.responseText;
+            console.log("RECEIVED DATA: "+returnedData);
+            if(returnedData == "" || returnedData == null){
+              alert("ERROR: Could not connect or returned no results.");
+              return;
+            }
+
+            returnedData = JSON.parse(returnedData);
+
+            //callback();
+        }
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+}
 
 
 
