@@ -20,7 +20,7 @@ table{
 
 table td,th{
 
-	padding: 6px;
+	padding: 6px !important;
 
 }
 
