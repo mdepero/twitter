@@ -10,19 +10,34 @@ p{
 	text-align: left !important;
 }
 
-.table{
-	width:100%;
+table{
+
+	padding: 5px;
 
 	display: block;
 
 	overflow-x: auto;
 
 }
-.table tr:nth-child(2n){
+
+table tr:first-child {
+
+	border-bottom: 1px solid black;
+
+}
+
+.datatable tr.net{
+	background-color: #ccc;
+}
+
+.datatable tr.sub:nth-child(3n){
 	background-color: #eee;
 }
-.table tr:first-child td{
-	font-weight: bold;
+.datatable tr.sub:nth-child(3n+1){
+	background-color: #fff;
+}
+.datatable tr.sub:nth-child(3n+2){
+	background-color: #eee;
 }
 
 
