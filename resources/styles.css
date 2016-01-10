@@ -10,13 +10,17 @@ p{
 	text-align: left !important;
 }
 
-table td,th{
-
-	padding: 5px;
+table{
 
 	display: block;
 
 	overflow-x: auto;
+
+}
+
+table td,th{
+
+	padding: 6px;
 
 }
 
