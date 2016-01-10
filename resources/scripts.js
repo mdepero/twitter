@@ -74,7 +74,12 @@ function getdata(){
 
 
 
-
+$("input").keypress(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        addUser();
+    }
+});
 
 function addUser(){
 
@@ -83,7 +88,7 @@ function addUser(){
       v[field.name] = field.value;
   });
 
-  var url = serverRootURL+"?q=adduser&firstname="+v['firstname']+'&lastname='+v['lastname']+'&twitterhandle='+v['twitterhandle']+'&groupid=1';
+  var url = serverRootURL+"?q=adduser&firstname="+$('#firstname').val()+'&lastname='+$('#lastname').val()+'&twitterhandle='+$('#twitterhandle').val()+'&groupid=1';
   url = url.replace(" ","%20");
   console.log("SENT URL: "+url);
   xmlhttp.onreadystatechange = function() {
