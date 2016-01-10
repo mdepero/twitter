@@ -58,7 +58,7 @@ function getdata(){
 
   $('#loading').hide();
 
-  $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current</th><th>Overall</th><th>Month</th><th>Week</th><th>Today</th></tr>');
+  $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current</th><th>Overall</th><th>1 Month</th><th>1 Week</th><th>Today</th></tr>');
 
   $.each(returnedData, function( index, value){
 
