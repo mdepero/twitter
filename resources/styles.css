@@ -30,10 +30,10 @@ table tr:first-child {
 
 }
 
-.datatable tr.net:nth-child(2n){
+.datatable tr.net:nth-child(8n+1){
 	background-color: #bbb;
 }
-.datatable tr.net:nth-child(2n+1){
+.datatable tr.net:nth-child(8n+5){
 	background-color: #ccc;
 }
 
@@ -45,7 +45,7 @@ table tr:first-child {
 }
 /*.datatable tr.sub:nth-child(3n+){
 	background-color: #eee;
-}*/
+}
 
 
 
