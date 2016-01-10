@@ -10,7 +10,7 @@ p{
 	text-align: left !important;
 }
 
-table{
+table td,th{
 
 	padding: 5px;
 
