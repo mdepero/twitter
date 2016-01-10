@@ -74,6 +74,13 @@ function getdata(){
 
 
 
+
+
+
+
+
+// hard coded user add in
+
 $("html").keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault();
@@ -83,10 +90,6 @@ $("html").keypress(function(event) {
 
 function addUser(){
 
-  var v = {};
-  $.each($('#adduser').serializeArray(), function(i, field) {
-      v[field.name] = field.value;
-  });
 
   var url = serverRootURL+"?q=adduser&firstname="+$('#firstname').val()+'&lastname='+$('#lastname').val()+'&twitterhandle='+$('#twitterhandle').val()+'&groupid=1';
   url = url.replace(" ","%20");
@@ -102,7 +105,34 @@ function addUser(){
 
             returnedData = JSON.parse(returnedData);
 
-            //callback();
+            addUpdate();
+        }
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+}
+
+function addUpdate(){
+
+
+  var url = serverRootURL+'?q=manualupdate&handle='+$('#twitterhandle').val()+'&date=2015-12-12 23:55:00&following='+$('#following').val()+'&followers='+$('#followers').val()+'&tweets='+$('#tweets').val();
+  url = url.replace(" ","%20");
+  console.log("SENT URL: "+url);
+  xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            returnedData = xmlhttp.responseText;
+            console.log("RECEIVED DATA: "+returnedData);
+            if(returnedData == "" || returnedData == null){
+              alert("ERROR: Could not connect or returned no results.");
+              return;
+            }
+
+            returnedData = JSON.parse(returnedData);
+
+            $('#firstname').focus();
+
+            //addUpdate();
         }
     }
     xmlhttp.open("GET", url, true);
