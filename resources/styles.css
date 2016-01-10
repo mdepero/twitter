@@ -37,15 +37,16 @@ table tr:first-child {
 	background-color: #ccc;
 }
 
-.datatable tr.sub:nth-child(3n){
+.datatable tr.sub:nth-child(2n){
 	background-color: #eee;
 }
-.datatable tr.sub:nth-child(3n+1){
+.datatable tr.sub:nth-child(2n+1){
 	background-color: #fff;
 }
-.datatable tr.sub:nth-child(3n+2){
+/*.datatable tr.sub:nth-child(3n+){
 	background-color: #eee;
-}
+}*/
+
 
 
 .btn{
