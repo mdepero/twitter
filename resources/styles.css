@@ -33,7 +33,7 @@ table tr:first-child {
 .datatable tr.net:nth-of-type(8n+2){
 	background-color: #bbb;
 }
-.datatable tr.net:nth-of-type(8n+3){
+.datatable tr.net:nth-of-type(8n+6){
 	background-color: #ccc;
 }
 
