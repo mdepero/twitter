@@ -42,13 +42,25 @@ function fetchData( callback, v1, v2 ){
 }
 
 
+
+function fixString(string){
+
+  if((string+" ").indexOf("N/A") > -1){
+    return "N/A";
+  }else{
+    return string;
+  }
+
+}
+
+
 function getdata(){
 
   $("#dataTable").append('<tr><th>Name</th><th>Handle</th><th>Type</th><th>Current Counts</th><th>Overall Change</th><th>1 Month</th><th>1 Week</th><th>Today</th></tr>');
 
   $.each(returnedData, function( index, value){
 
-    $("#dataTable").append('<tr class="net" id="'+value['handle']+'_net"><td rowspan="4" id="'+value['handle']+'_name">'+value['name']+'</td><td rowspan="4" id="'+value['handle']+'_handle">'+value['handle']+'</td><td>Net Activity</td><td>'+(value['counts']['followers'][0]+value['counts']['following'][0]+value['counts']['tweets'][0]).replace("N/AN/AN/A","N/A")+'</td><td>'+(value['counts']['followers'][1]+value['counts']['following'][1]+value['counts']['tweets'][1]).replace("N/AN/AN/A","N/A")+'</td><td>'+(value['counts']['followers'][2]+value['counts']['following'][2]+value['counts']['tweets'][2]).replace("N/AN/AN/A","N/A")+'</td><td>'+(value['counts']['followers'][3]+value['counts']['following'][3]+value['counts']['tweets'][3]).replace("N/AN/AN/A","N/A")+'</td><td>'+(value['counts']['followers'][4]+value['counts']['following'][4]+value['counts']['tweets'][4]).replace("N/AN/AN/A","N/A")+'</td></tr>');
+    $("#dataTable").append('<tr class="net" id="'+value['handle']+'_net"><td rowspan="4" id="'+value['handle']+'_name">'+value['name']+'</td><td rowspan="4" id="'+value['handle']+'_handle">'+value['handle']+'</td><td>Net Activity</td><td>'+fixString(value['counts']['followers'][0]+value['counts']['following'][0]+value['counts']['tweets'][0])+'</td><td>'+fixString(value['counts']['followers'][1]+value['counts']['following'][1]+value['counts']['tweets'][1])+'</td><td>'+fixString(value['counts']['followers'][2]+value['counts']['following'][2]+value['counts']['tweets'][2]).replace("N/AN/AN/A","N/A")+'</td><td>'+fixString(value['counts']['followers'][3]+value['counts']['following'][3]+value['counts']['tweets'][3])+'</td><td>'+fixString(value['counts']['followers'][4]+value['counts']['following'][4]+value['counts']['tweets'][4]).replace("N/AN/AN/A","N/A")+'</td></tr>');
 
     $("#dataTable").append('<tr class="sub" id="'+value['handle']+'_tweets"><td>Tweets</td><td>'+(value['counts']['tweets'][0])+'</td><td>'+(value['counts']['tweets'][1])+'</td><td>'+(value['counts']['tweets'][2])+'</td><td>'+(value['counts']['tweets'][3])+'</td><td>'+(value['counts']['tweets'][4])+'</td></tr>');
 
