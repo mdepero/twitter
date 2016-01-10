@@ -48,7 +48,13 @@ function getdata(){
 
   $.each(returnedData, function( index, value){
 
-    $("#dataTable").append('<tr class="net"><td rowspan="4">'+value['name']+'</td><td rowspan="4">'+value['handle']+'</td><td>Net Activity</td><td>'+(value['counts']['followers'][0]+value['counts']['following'][0]+value['counts']['tweets'][0])+'</td><td>Overall</td><td>month</td><td>week</td><td>day</td></tr>');
+    $("#dataTable").append('<tr class="net" id="'+value['handle']+'_net"><td rowspan="4" id="'+value['handle']+'_name">'+value['name']+'</td><td rowspan="4" id="'+value['handle']+'_handle">'+value['handle']+'</td><td>Net Activity</td><td>'+(value['counts']['followers'][0]+value['counts']['following'][0]+value['counts']['tweets'][0])+'</td><td>'+(value['counts']['followers'][1]+value['counts']['following'][1]+value['counts']['tweets'][1])+'</td><td>'+(value['counts']['followers'][2]+value['counts']['following'][2]+value['counts']['tweets'][2])+'</td><td>'+(value['counts']['followers'][3]+value['counts']['following'][3]+value['counts']['tweets'][3])+'</td><td>'+(value['counts']['followers'][4]+value['counts']['following'][4]+value['counts']['tweets'][4])+'</td></tr>');
+
+    $("#dataTable").append('<tr class="sub" id="'+value['handle']+'_tweets"><td>Tweets</td><td>'+(value['counts']['tweets'][0])+'</td><td>'+(value['counts']['tweets'][1])+'</td><td>'+(value['counts']['tweets'][2])+'</td><td>'+(value['counts']['tweets'][3])+'</td><td>'+(value['counts']['tweets'][4])+'</td></tr>');
+
+    $("#dataTable").append('<tr class="sub" id="'+value['handle']+'_followers"><td>Followers</td><td>'+(value['counts']['followers'][0])+'</td><td>'+(value['counts']['followers'][1])+'</td><td>'+(value['counts']['followers'][2])+'</td><td>'+(value['counts']['followers'][3])+'</td><td>'+(value['counts']['followers'][4])+'</td></tr>');
+
+    $("#dataTable").append('<tr class="sub" id="'+value['handle']+'_following"><td>Following</td><td>'+(value['counts']['following'][0])+'</td><td>'+(value['counts']['following'][1])+'</td><td>'+(value['counts']['following'][2])+'</td><td>'+(value['counts']['following'][3])+'</td><td>'+(value['counts']['following'][4])+'</td></tr>');
 
   });
 
