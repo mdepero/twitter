@@ -74,7 +74,7 @@ function getdata(){
 
 
 
-$("input").keypress(function(event) {
+$("html").keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault();
         addUser();
