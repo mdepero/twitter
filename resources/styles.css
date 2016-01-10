@@ -31,10 +31,10 @@ table tr:first-child {
 }
 
 .datatable tr.net:nth-child(2n){
-	background-color: #fbb;
+	background-color: #bbb;
 }
 .datatable tr.net:nth-child(2n+1){
-	background-color: #fcc;
+	background-color: #ccc;
 }
 
 .datatable tr.sub:nth-child(3n){
